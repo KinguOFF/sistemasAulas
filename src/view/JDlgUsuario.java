@@ -316,26 +316,31 @@ public class JDlgUsuario extends javax.swing.JDialog {
     }//GEN-LAST:event_jBtnLspf_AlterarActionPerformed
 
     private void jBtnLspf_PesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnLspf_PesquisarActionPerformed
-        String resp = JOptionPane.showInputDialog(null, "Entre com o codigo");
-        Lspf_usuariosDAO lspf_usuariosDAO = new Lspf_usuariosDAO();
-        if (resp == null) {
-        JOptionPane.showMessageDialog(null, "Código em branco");
-        } 
-        else{
-        Lspf_usuarios lspf_usuarios = (Lspf_usuarios) lspf_usuariosDAO.list(Integer.parseInt(resp));
-        jTxtLspf_Codigo.setText(resp);
-        jTxtLspf_Nome.setText(lspf_usuarios.getLspf_nome());
-        jTxtLspf_Apelido.setText(lspf_usuarios.getLspf_apelido());
-        jFmtLspf_CPF.setText(lspf_usuarios.getLspf_cpf());
-        jFmtLspf_DataNasc.setText(null);
-        jPwfLspf_Senha.setText(lspf_usuarios.getLspf_senha());
-        jCboLspf_Nivel.setSelectedIndex(lspf_usuarios.getLspf_nivel());
-         if (lspf_usuarios.getLspf_ativo().equals("T")){
-            jChbLspf_Ativo.setSelected(true);
-        } else {
-            jChbLspf_Ativo.setSelected(false);
-        }
-        }
+       
+//        String resp = JOptionPane.showInputDialog(null, "Entre com o codigo");
+//        Lspf_usuariosDAO lspf_usuariosDAO = new Lspf_usuariosDAO();
+//        if (resp == null) {
+//        JOptionPane.showMessageDialog(null, "Código em branco");
+//        } 
+//        else{
+//        Lspf_usuarios lspf_usuarios = (Lspf_usuarios) lspf_usuariosDAO.list(Integer.parseInt(resp));
+//        jTxtLspf_Codigo.setText(resp);
+//        jTxtLspf_Nome.setText(lspf_usuarios.getLspf_nome());
+//        jTxtLspf_Apelido.setText(lspf_usuarios.getLspf_apelido());
+//        jFmtLspf_CPF.setText(lspf_usuarios.getLspf_cpf());
+//        jFmtLspf_DataNasc.setText(null);
+//        jPwfLspf_Senha.setText(lspf_usuarios.getLspf_senha());
+//        jCboLspf_Nivel.setSelectedIndex(lspf_usuarios.getLspf_nivel());
+//         if (lspf_usuarios.getLspf_ativo().equals("T")){
+//            jChbLspf_Ativo.setSelected(true);
+//        } else {
+//            jChbLspf_Ativo.setSelected(false);
+//        }
+//        };
+        
+        JDialogUsuariosPesquisar pesquisar = new JDialogUsuariosPesquisar(null, true);
+        pesquisar.setVisible(true);
+        
     }//GEN-LAST:event_jBtnLspf_PesquisarActionPerformed
 
     private void jBtnLspf_CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnLspf_CancelarActionPerformed

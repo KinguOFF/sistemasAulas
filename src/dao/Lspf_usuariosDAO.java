@@ -112,11 +112,11 @@ public class Lspf_usuariosDAO extends DAO_Abstract{
     public ArrayList listAll() {
         List lista = new ArrayList();
     try {
-            String sql = "select * from lspf_usuarios where lspf_idUsuarios=?";
+            String sql = "select * from lspf_usuarios";
             PreparedStatement pst = cnt.prepareStatement(sql);
             pst.executeQuery();
             ResultSet rs = pst.executeQuery();
-            if (rs.next() == true) {
+            while (rs.next() == true) {
                 Lspf_usuarios Lspf_usuarios = new Lspf_usuarios();
                 Lspf_usuarios.setLspf_nome(rs.getString("lspf_nome"));
                 Lspf_usuarios.setLspf_apelido(rs.getString("lspf_apelido"));
